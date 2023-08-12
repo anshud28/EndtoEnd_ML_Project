@@ -60,3 +60,11 @@ def load_object(file_path):
 
     except Exception as e:
         raise CustomException(e, sys)
+    
+def load_object(file_path):  #load_object is for loading the pickle file
+    try:
+        with open(file_path, "rb") as file_obj:  #opening in read byte mode
+            return pickle.load(file_obj)
+
+    except Exception as e:
+        raise CustomException(e, sys)    
